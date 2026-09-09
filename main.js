@@ -1,4 +1,4 @@
-const houses = [
+let houses = JSON.parse(localStorage.getItem('muzaffarHouses')) || [
     {
         id: 1,
         title: '4 xonali uy',

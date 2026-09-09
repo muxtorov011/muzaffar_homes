@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel — Muzaffar Homes</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <div class="login-icon">
+                <i class="uil uil-lock"></i>
+            </div>
+            <h2>Admin Panel</h2>
+            <p>Parolni kiriting</p>
+            <input type="password" id="passwordInput" class="login-input" placeholder="Parol" onkeypress="if(event.key === 'Enter') checkPassword()">
+            <button class="login-btn" onclick="checkPassword()">
+                <i class="uil uil-sign-in"></i>
+                Kirish
+            </button>
+            <p class="login-error" id="loginError"></p>
+        </div>
+    </div>
+
+    <div class="admin-panel" id="adminPanel">
+        <header class="admin-header">
+            <div class="admin-logo">
+                <i class="uil uil-building"></i>
+                <span>MUZAFFAR HOMES</span>
+            </div>
+            <button class="logout-btn" onclick="logout()">
+                <i class="uil uil-sign-out"></i>
+                Chiqish
+            </button>
+        </header>
+
+        <div class="admin-container">
+            <div class="admin-sidebar">
+                <h3>Boshqaruv</h3>
+                <button class="sidebar-btn active" onclick="showSection('houses')">
+                    <i class="uil uil-home"></i>
+                    Uylar
+                </button>
+                <button class="sidebar-btn" onclick="showSection('addHouse')">
+                    <i class="uil uil-plus-circle"></i>
+                    Yangi uy qo'shish
+                </button>
+            </div>
+
+            <div class="admin-content">
+                <div class="admin-section" id="housesSection">
+                    <h2>Barcha uylar</h2>
+                    <div class="admin-houses-grid" id="adminHousesGrid"></div>
+                </div>
+
+                <div class="admin-section" id="addHouseSection" style="display:none;">
+                    <h2>Yangi uy qo'shish</h2>
+                    <form class="add-house-form" id="addHouseForm">
+                        <div class="form-group">
+                            <label>Uy nomi</label>
+                            <input type="text" id="houseTitle" required placeholder="Masalan: 4 xonali uy">
+                        </div>
+                        <div class="form-group">
+                            <label>Manzil</label>
+                            <input type="text" id="houseLocation" required placeholder="Masalan: Chilonzor tumani, Kamolon mahallasi">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Xonalar soni</label>
+                                <input type="text" id="houseRooms" required placeholder="Masalan: 4 xona">
+                            </div>
+                            <div class="form-group">
+                                <label>Maydoni</label>
+                                <input type="text" id="houseArea" required placeholder="Masalan: 120 kv.m">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Narxi</label>
+                            <input type="text" id="housePrice" required placeholder="Masalan: 450 000 000 so'm">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="text" id="housePhone" required placeholder="+998970748888">
+                            </div>
+                            <div class="form-group">
+                                <label>Telegram</label>
+                                <input type="text" id="houseTelegram" required placeholder="https://t.me/muzaffarhomes">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Rasm 1 (asosiy)</label>
+                            <input type="text" id="houseImage1" required placeholder="images/uy6-1.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label>Rasm 2</label>
+                            <input type="text" id="houseImage2" required placeholder="images/uy6-2.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label>Rasm 3</label>
+                            <input type="text" id="houseImage3" required placeholder="images/uy6-3.jpg">
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="uil uil-save"></i>
+                            Saqlash
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script src="main.js"></script>
+
+
+
+
+</body>
+</html>
